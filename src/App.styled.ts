@@ -50,7 +50,6 @@ export const InputAmount = styled.input`
 
 export const InputBoxAmount = styled.div`
   position: relative;
-  z-index: 10;
 `;
 
 export const AmountSpan = styled.span`
@@ -66,6 +65,43 @@ export const AmountSpan = styled.span`
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
 `;
+
+///////////////// TERM INPUT /////////////////////
+
+export const TermLabelInputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const TermLabel = styled.label`
+  font-weight: 500;
+`;
+
+export const InputTerm = styled.input`
+  width: 100%;
+  padding: 0.8rem 0;
+`;
+
+export const InputBoxTerm = styled.div`
+  position: relative;
+`;
+
+export const TermSpan = styled.span`
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  display: flex;
+  align-items: center;
+
+  background-color: #e4f4fd;
+  height: 93%;
+  padding: 0 1.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+`;
+
+////////////////// CALCULATE BTN //////////////////////
 
 export const CalculateBtn = styled.button`
   display: flex;

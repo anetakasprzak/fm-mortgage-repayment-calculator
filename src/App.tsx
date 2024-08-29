@@ -13,6 +13,11 @@ import {
   AmountSpan,
   AmountLabelInputBox,
   AmountLabel,
+  TermLabelInputBox,
+  TermLabel,
+  InputBoxTerm,
+  InputTerm,
+  TermSpan,
 } from "./App.styled";
 
 function App() {
@@ -40,13 +45,13 @@ function FormComponent() {
         </InputBoxAmount>
       </AmountLabelInputBox>
 
-      <div>
-        <label>Mortgage Term</label>
-        <div>
-          <input />
-          <span>years</span>
-        </div>
-      </div>
+      <TermLabelInputBox>
+        <TermLabel>Mortgage Term</TermLabel>
+        <InputBoxTerm>
+          <InputTerm />
+          <TermSpan>years</TermSpan>
+        </InputBoxTerm>
+      </TermLabelInputBox>
 
       <div>
         <label>Interest Rate</label>
