@@ -101,6 +101,41 @@ export const TermSpan = styled.span`
   border-top-left-radius: 0.1rem;
 `;
 
+///////////////// RATE INPUT /////////////////////
+
+export const RateLabelInputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const RateLabel = styled.label`
+  font-weight: 500;
+`;
+
+export const InputRate = styled.input`
+  width: 100%;
+  padding: 0.8rem 0;
+`;
+
+export const InputBoxRate = styled.div`
+  position: relative;
+`;
+
+export const RateSpan = styled.span`
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  display: flex;
+  align-items: center;
+
+  background-color: #e4f4fd;
+  height: 93%;
+  padding: 0 1.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+`;
+
 ////////////////// CALCULATE BTN //////////////////////
 
 export const CalculateBtn = styled.button`

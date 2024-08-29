@@ -18,6 +18,11 @@ import {
   InputBoxTerm,
   InputTerm,
   TermSpan,
+  RateLabelInputBox,
+  RateLabel,
+  InputBoxRate,
+  InputRate,
+  RateSpan,
 } from "./App.styled";
 
 function App() {
@@ -53,13 +58,13 @@ function FormComponent() {
         </InputBoxTerm>
       </TermLabelInputBox>
 
-      <div>
-        <label>Interest Rate</label>
-        <div>
-          <input />
-          <span>%</span>
-        </div>
-      </div>
+      <RateLabelInputBox>
+        <RateLabel>Interest Rate</RateLabel>
+        <InputBoxRate>
+          <InputRate />
+          <RateSpan>%</RateSpan>
+        </InputBoxRate>
+      </RateLabelInputBox>
 
       <div>
         <label>Mortgage Type</label>
