@@ -1,5 +1,12 @@
 import "./App.styled";
-import { Wrapper, Form, Results } from "./App.styled";
+import {
+  Wrapper,
+  Form,
+  ClearBtn,
+  Results,
+  CalculateBtn,
+  CalculateBtnText,
+} from "./App.styled";
 
 function App() {
   return (
@@ -15,7 +22,7 @@ function FormComponent() {
     <Form>
       <div>
         <h1>Mortgage Calculator</h1>
-        <button>Clear All</button>
+        <ClearBtn>Clear All</ClearBtn>
       </div>
 
       <div>
@@ -54,10 +61,10 @@ function FormComponent() {
         </div>
       </div>
 
-      <button>
+      <CalculateBtn>
         <img src="/icon-calculator.svg" />
-        <p>Calculate Repayments</p>
-      </button>
+        <CalculateBtnText>Calculate Repayments</CalculateBtnText>
+      </CalculateBtn>
     </Form>
   );
 }
