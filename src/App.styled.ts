@@ -11,6 +11,10 @@ export const Form = styled.form`
   width: 100%;
   background-color: #fff;
   padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
 `;
 
 export const HeaderBox = styled.div`
@@ -60,7 +64,7 @@ export const AmountSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93%;
+  height: 95%;
   padding: 0 1.2rem;
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
@@ -95,10 +99,11 @@ export const TermSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93%;
+  height: 95%;
+
   padding: 0 1.2rem;
-  border-bottom-left-radius: 0.1rem;
-  border-top-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
 `;
 
 ///////////////// RATE INPUT /////////////////////
@@ -130,10 +135,11 @@ export const RateSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93%;
+  height: 95%;
+
   padding: 0 1.2rem;
-  border-bottom-left-radius: 0.1rem;
-  border-top-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  border-top-right-radius: 0.1rem;
 `;
 
 ////////////////// CALCULATE BTN //////////////////////
