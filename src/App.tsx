@@ -1,11 +1,18 @@
 import "./App.styled";
 import {
   Wrapper,
+  HeaderBox,
+  Header,
   Form,
   ClearBtn,
   Results,
   CalculateBtn,
   CalculateBtnText,
+  InputAmount,
+  InputBoxAmount,
+  AmountSpan,
+  AmountLabelInputBox,
+  AmountLabel,
 } from "./App.styled";
 
 function App() {
@@ -20,18 +27,18 @@ function App() {
 function FormComponent() {
   return (
     <Form>
-      <div>
-        <h1>Mortgage Calculator</h1>
+      <HeaderBox>
+        <Header>Mortgage Calculator</Header>
         <ClearBtn>Clear All</ClearBtn>
-      </div>
+      </HeaderBox>
 
-      <div>
-        <label>Mortgage Amount</label>
-        <div>
-          <input />
-          <span>£</span>
-        </div>
-      </div>
+      <AmountLabelInputBox>
+        <AmountLabel>Mortgage Amount</AmountLabel>
+        <InputBoxAmount>
+          <InputAmount />
+          <AmountSpan>£</AmountSpan>
+        </InputBoxAmount>
+      </AmountLabelInputBox>
 
       <div>
         <label>Mortgage Term</label>

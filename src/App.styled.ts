@@ -10,12 +10,61 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   width: 100%;
   background-color: #fff;
+  padding: 2rem;
+`;
+
+export const HeaderBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+`;
+
+export const Header = styled.h2`
+  color: #133041;
+  font-weight: 700;
+  font-size: 2.4rem;
 `;
 
 export const ClearBtn = styled.button`
   font-weight: 500;
   line-height: 150%;
-  text-decoration-line: underline;
+  align-self: flex-start;
+  border-bottom: 1px solid #4e6e7e;
+`;
+
+///////////////// AMOUNT INPUT /////////////////////
+export const AmountLabelInputBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const AmountLabel = styled.label`
+  font-weight: 500;
+`;
+
+export const InputAmount = styled.input`
+  width: 100%;
+  padding: 0.8rem 0;
+`;
+
+export const InputBoxAmount = styled.div`
+  position: relative;
+  z-index: 10;
+`;
+
+export const AmountSpan = styled.span`
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  display: flex;
+  align-items: center;
+
+  background-color: #e4f4fd;
+  height: 93%;
+  padding: 0 1.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
 `;
 
 export const CalculateBtn = styled.button`
