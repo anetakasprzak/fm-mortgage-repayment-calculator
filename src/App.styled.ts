@@ -142,6 +142,40 @@ export const RateSpan = styled.span`
   border-top-right-radius: 0.1rem;
 `;
 
+////////////////// TYPE //////////////////////
+
+export const InputsRadioBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`;
+
+export const LabelMortgageType = styled.label``;
+
+export const RepaymentInputBox = styled.div`
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #4e6e7e;
+  border-radius: 0.2rem;
+  padding: 0.7rem 1rem;
+`;
+
+export const InputRepayment = styled.input``;
+
+export const RepaymentText = styled.span``;
+
+export const InterestInputBox = styled.div`
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #4e6e7e;
+  border-radius: 0.2rem;
+  padding: 0.7rem 1rem;
+`;
+
+export const InputInterest = styled.input``;
+
+export const InterestText = styled.span``;
+
 ////////////////// CALCULATE BTN //////////////////////
 
 export const CalculateBtn = styled.button`

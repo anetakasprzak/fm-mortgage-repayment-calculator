@@ -23,6 +23,14 @@ import {
   InputBoxRate,
   InputRate,
   RateSpan,
+  InputsRadioBox,
+  LabelMortgageType,
+  RepaymentInputBox,
+  InputRepayment,
+  RepaymentText,
+  InterestInputBox,
+  InputInterest,
+  InterestText,
 } from "./App.styled";
 
 function App() {
@@ -66,17 +74,17 @@ function FormComponent() {
         </InputBoxRate>
       </RateLabelInputBox>
 
-      <div>
-        <label>Mortgage Type</label>
-        <div>
-          <input type="radio" name="type" />
-          <span>Repayment</span>
-        </div>
-        <div>
-          <input type="radio" name="type" />
-          <span>Interest Only</span>
-        </div>
-      </div>
+      <InputsRadioBox>
+        <LabelMortgageType>Mortgage Type</LabelMortgageType>
+        <RepaymentInputBox>
+          <InputRepayment type="radio" name="type" />
+          <RepaymentText>Repayment</RepaymentText>
+        </RepaymentInputBox>
+        <InterestInputBox>
+          <InputInterest type="radio" name="type" />
+          <InterestText>Interest Only</InterestText>
+        </InterestInputBox>
+      </InputsRadioBox>
 
       <CalculateBtn>
         <img src="/icon-calculator.svg" />
