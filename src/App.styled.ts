@@ -225,3 +225,39 @@ export const TextEmptyResults = styled.p`
   width: 90%;
   color: #9abed5;
 `;
+
+//////////// CALCULATED ////////////
+
+export const ResultsSection = styled.div`
+  width: 100%;
+  background-color: #133041;
+  padding: 3.2rem 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const HeadingResults = styled.h2`
+  color: #fff;
+`;
+
+export const ResultsText = styled.p`
+  color: #9abed5;
+`;
+
+export const CalculatedBox = styled.div`
+  background-color: rgba(0, 0, 0, 0.25);
+`;
+
+export const RepaymentCalcBox = styled.div``;
+
+export const RepaymentCalcText = styled.p``;
+
+export const RepaymentNumber = styled.span``;
+
+export const TermCalcBox = styled.div``;
+
+export const TermCalcText = styled.p``;
+
+export const TermNumber = styled.span``;

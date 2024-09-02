@@ -34,13 +34,24 @@ import {
   ImgEmptyResults,
   HeadingEmptyResults,
   TextEmptyResults,
+  ResultsSection,
+  HeadingResults,
+  ResultsText,
+  CalculatedBox,
+  RepaymentCalcBox,
+  RepaymentCalcText,
+  RepaymentNumber,
+  TermCalcBox,
+  TermCalcText,
+  TermNumber,
 } from "./App.styled";
 
 function App() {
   return (
     <Wrapper>
       <FormComponent />
-      <EmptyResultsComponent />
+      {/* <EmptyResultsComponent /> */}
+      <CalculatedResults />
     </Wrapper>
   );
 }
@@ -107,6 +118,29 @@ function EmptyResultsComponent() {
         monthly repayments would be.
       </TextEmptyResults>
     </EmptyResultsBox>
+  );
+}
+
+function CalculatedResults() {
+  return (
+    <ResultsSection>
+      <HeadingResults>Your results</HeadingResults>
+      <ResultsText>
+        Your results are shown below based on the information you provided. To
+        adjust the results, edit the form and click “calculate repayments”
+        again.
+      </ResultsText>
+      <CalculatedBox>
+        <RepaymentCalcBox>
+          <RepaymentCalcText>Your monthly repayments</RepaymentCalcText>
+          <RepaymentNumber>£1,797.74</RepaymentNumber>
+        </RepaymentCalcBox>
+        <TermCalcBox>
+          <TermCalcText>Total you'll repay over the term</TermCalcText>
+          <TermNumber>£539,322.94</TermNumber>
+        </TermCalcBox>
+      </CalculatedBox>
+    </ResultsSection>
   );
 }
 
