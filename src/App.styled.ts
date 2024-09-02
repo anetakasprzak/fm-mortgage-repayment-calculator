@@ -50,6 +50,7 @@ export const AmountLabel = styled.label`
 export const InputAmount = styled.input`
   width: 100%;
   padding: 0.8rem 0;
+  padding-left: 4.4rem;
 `;
 
 export const InputBoxAmount = styled.div`
@@ -64,7 +65,7 @@ export const AmountSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 95%;
+  height: 93.7%;
   padding: 0 1.2rem;
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
@@ -85,6 +86,7 @@ export const TermLabel = styled.label`
 export const InputTerm = styled.input`
   width: 100%;
   padding: 0.8rem 0;
+  padding-left: 1rem;
 `;
 
 export const InputBoxTerm = styled.div`
@@ -99,7 +101,7 @@ export const TermSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 95%;
+  height: 93.8%;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
@@ -121,6 +123,7 @@ export const RateLabel = styled.label`
 export const InputRate = styled.input`
   width: 100%;
   padding: 0.8rem 0;
+  padding-left: 1rem;
 `;
 
 export const InputBoxRate = styled.div`
@@ -135,7 +138,7 @@ export const RateSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 95%;
+  height: 93.8%;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
