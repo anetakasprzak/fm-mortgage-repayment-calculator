@@ -163,10 +163,17 @@ export const RepaymentInputBox = styled.div`
   gap: 1rem;
   border: 1px solid #4e6e7e;
   border-radius: 0.2rem;
-  padding: 0.7rem 1rem;
+  padding: 1rem;
+
+  &:has(input:checked) {
+    border: 1px solid #d8db2f;
+    background-color: rgba(216, 219, 47, 0.15);
+  }
 `;
 
-export const InputRepayment = styled.input``;
+export const InputRepayment = styled.input`
+  accent-color: #4e6e7e;
+`;
 
 export const RepaymentText = styled.span``;
 
@@ -175,10 +182,17 @@ export const InterestInputBox = styled.div`
   gap: 1rem;
   border: 1px solid #4e6e7e;
   border-radius: 0.2rem;
-  padding: 0.7rem 1rem;
+  padding: 1rem;
+
+  &:has(input:checked) {
+    border: 1px solid #d8db2f;
+    background-color: rgba(216, 219, 47, 0.15);
+  }
 `;
 
-export const InputInterest = styled.input``;
+export const InputInterest = styled.input`
+  accent-color: #4e6e7e;
+`;
 
 export const InterestText = styled.span``;
 
