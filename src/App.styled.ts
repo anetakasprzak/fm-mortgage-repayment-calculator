@@ -235,7 +235,7 @@ export const ResultsSection = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export const HeadingResults = styled.h2`
@@ -244,20 +244,45 @@ export const HeadingResults = styled.h2`
 
 export const ResultsText = styled.p`
   color: #9abed5;
+  line-height: 150%;
+  margin-bottom: 1rem;
 `;
 
 export const CalculatedBox = styled.div`
   background-color: rgba(0, 0, 0, 0.25);
+  padding: 2.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 0.8rem;
+  border-top: 4px solid #d8db2f;
 `;
 
-export const RepaymentCalcBox = styled.div``;
+export const RepaymentCalcBox = styled.div`
+  border-bottom: 1px solid #9abed5;
+  padding-bottom: 2rem;
+`;
 
-export const RepaymentCalcText = styled.p``;
+export const RepaymentCalcText = styled.p`
+  color: #9abed5;
+  margin-bottom: 0.8rem;
+`;
 
-export const RepaymentNumber = styled.span``;
+export const RepaymentNumber = styled.span`
+  color: #d8db2f;
+  font-size: 4rem;
+  font-weight: 700;
+`;
 
 export const TermCalcBox = styled.div``;
 
-export const TermCalcText = styled.p``;
+export const TermCalcText = styled.p`
+  color: #9abed5;
+`;
 
-export const TermNumber = styled.span``;
+export const TermNumber = styled.span`
+  color: #fff;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+`;
