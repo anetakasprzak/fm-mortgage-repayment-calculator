@@ -51,6 +51,7 @@ export const InputAmount = styled.input`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 4.4rem;
+  font-size: 1.8rem;
 `;
 
 export const InputBoxAmount = styled.div`
@@ -65,7 +66,7 @@ export const AmountSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93.7%;
+  height: 95%;
   padding: 0 1.2rem;
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
@@ -87,6 +88,7 @@ export const InputTerm = styled.input`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 1rem;
+  font-size: 1.8rem;
 `;
 
 export const InputBoxTerm = styled.div`
@@ -101,7 +103,7 @@ export const TermSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93.8%;
+  height: 95%;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
@@ -124,6 +126,7 @@ export const InputRate = styled.input`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 1rem;
+  font-size: 1.8rem;
 `;
 
 export const InputBoxRate = styled.div`
@@ -138,7 +141,7 @@ export const RateSpan = styled.span`
   align-items: center;
 
   background-color: #e4f4fd;
-  height: 93.8%;
+  height: 95%;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
@@ -278,6 +281,7 @@ export const TermCalcBox = styled.div``;
 
 export const TermCalcText = styled.p`
   color: #9abed5;
+  margin-bottom: 0.8rem;
 `;
 
 export const TermNumber = styled.span`
