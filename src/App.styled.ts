@@ -196,7 +196,29 @@ export const CalculateBtnText = styled.p`
 `;
 
 /////////////////// RESULTS ///////////////////////
-export const Results = styled.div`
+
+//////// EMPTY ////////
+export const EmptyResultsBox = styled.div`
   width: 100%;
   background-color: #133041;
+  padding: 3.2rem 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+`;
+
+export const ImgEmptyResults = styled.img`
+  height: 19.2rem;
+`;
+
+export const HeadingEmptyResults = styled.h2`
+  color: #fff;
+`;
+
+export const TextEmptyResults = styled.p`
+  width: 90%;
+  color: #9abed5;
 `;

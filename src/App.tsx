@@ -5,7 +5,7 @@ import {
   Header,
   Form,
   ClearBtn,
-  Results,
+  EmptyResultsBox,
   CalculateBtn,
   CalculateBtnText,
   InputAmount,
@@ -31,13 +31,16 @@ import {
   InterestInputBox,
   InputInterest,
   InterestText,
+  ImgEmptyResults,
+  HeadingEmptyResults,
+  TextEmptyResults,
 } from "./App.styled";
 
 function App() {
   return (
     <Wrapper>
       <FormComponent />
-      <ResultsComponent />
+      <EmptyResultsComponent />
     </Wrapper>
   );
 }
@@ -94,8 +97,17 @@ function FormComponent() {
   );
 }
 
-function ResultsComponent() {
-  return <Results>Results</Results>;
+function EmptyResultsComponent() {
+  return (
+    <EmptyResultsBox>
+      <ImgEmptyResults src="../public/illustration-empty.svg" />
+      <HeadingEmptyResults>Results shown here</HeadingEmptyResults>
+      <TextEmptyResults>
+        Complete the form and click “calculate repayments” to see what your
+        monthly repayments would be.
+      </TextEmptyResults>
+    </EmptyResultsBox>
+  );
 }
 
 export default App;
