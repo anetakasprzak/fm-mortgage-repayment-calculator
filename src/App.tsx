@@ -121,11 +121,15 @@ function FormComponent() {
       <InputsRadioBox>
         <LabelMortgageType>Mortgage Type</LabelMortgageType>
         <RepaymentInputBox>
-          <InputRepayment type="radio" name="type" />
+          <InputRepayment
+            type="radio"
+            value="repayment"
+            {...register("type")}
+          />
           <RepaymentText>Repayment</RepaymentText>
         </RepaymentInputBox>
         <InterestInputBox>
-          <InputInterest type="radio" name="type" />
+          <InputInterest type="radio" value="interest" {...register("type")} />
           <InterestText>Interest Only</InterestText>
         </InterestInputBox>
       </InputsRadioBox>
