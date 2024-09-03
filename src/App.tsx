@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.styled";
 import {
   Wrapper,
@@ -49,9 +50,11 @@ import {
 import { useForm } from "react-hook-form";
 
 function App() {
+  const [formData, setFormData] = useState<FormValues>();
+
   return (
     <Wrapper>
-      <FormComponent />
+      <FormComponent setFormData={setFormData} />
       <EmptyResultsComponent />
       {/* <CalculatedResults /> */}
     </Wrapper>
@@ -65,7 +68,11 @@ interface FormValues {
   type: string;
 }
 
-function FormComponent() {
+interface FormComponentProps {
+  setFormData: React.Dispatch<React.SetStateAction<FormValues | undefined>>;
+}
+
+function FormComponent({ setFormData }: FormComponentProps) {
   const {
     register,
     handleSubmit,
@@ -81,7 +88,7 @@ function FormComponent() {
   });
 
   const onSubmit = (data: FormValues) => {
-    console.log(data);
+    setFormData(data);
   };
 
   return (
