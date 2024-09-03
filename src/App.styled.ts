@@ -206,7 +206,7 @@ export const CalculateBtn = styled.button`
   background-color: #d8db2f;
   width: 100%;
   border-radius: 99rem;
-  padding: 1rem 0;
+  padding: 1.6rem 0;
 `;
 
 export const CalculateBtnText = styled.p`
