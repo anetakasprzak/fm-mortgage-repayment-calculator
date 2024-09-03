@@ -148,6 +148,12 @@ export const RateSpan = styled.span`
   border-top-right-radius: 0.1rem;
 `;
 
+export const TwoInputsFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+`;
+
 ////////////////// TYPE //////////////////////
 
 export const InputsRadioBox = styled.div`

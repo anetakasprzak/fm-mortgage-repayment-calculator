@@ -44,6 +44,7 @@ import {
   RepaymentNumber,
   TermCalcBox,
   TermCalcText,
+  TwoInputsFlex,
   TermNumber,
 } from "./App.styled";
 
@@ -55,8 +56,8 @@ function App() {
   return (
     <Wrapper>
       <FormComponent setFormData={setFormData} />
-      <EmptyResultsComponent />
-      {/* <CalculatedResults /> */}
+      {/* <EmptyResultsComponent /> */}
+      <CalculatedResults />
     </Wrapper>
   );
 }
@@ -109,21 +110,23 @@ function FormComponent({ setFormData }: FormComponentProps) {
         </InputBoxAmount>
       </AmountLabelInputBox>
 
-      <TermLabelInputBox>
-        <TermLabel>Mortgage Term</TermLabel>
-        <InputBoxTerm>
-          <InputTerm type="text" {...register("term", { required: true })} />
-          <TermSpan>years</TermSpan>
-        </InputBoxTerm>
-      </TermLabelInputBox>
+      <TwoInputsFlex>
+        <TermLabelInputBox>
+          <TermLabel>Mortgage Term</TermLabel>
+          <InputBoxTerm>
+            <InputTerm type="text" {...register("term", { required: true })} />
+            <TermSpan>years</TermSpan>
+          </InputBoxTerm>
+        </TermLabelInputBox>
 
-      <RateLabelInputBox>
-        <RateLabel>Interest Rate</RateLabel>
-        <InputBoxRate>
-          <InputRate type="text" {...register("rate", { required: true })} />
-          <RateSpan>%</RateSpan>
-        </InputBoxRate>
-      </RateLabelInputBox>
+        <RateLabelInputBox>
+          <RateLabel>Interest Rate</RateLabel>
+          <InputBoxRate>
+            <InputRate type="text" {...register("rate", { required: true })} />
+            <RateSpan>%</RateSpan>
+          </InputBoxRate>
+        </RateLabelInputBox>
+      </TwoInputsFlex>
 
       <InputsRadioBox>
         <LabelMortgageType>Mortgage Type</LabelMortgageType>
