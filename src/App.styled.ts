@@ -3,8 +3,12 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 46rem;
+  max-width: 50rem;
   min-width: 31rem;
+
+  @media screen and (min-width: 39em) {
+    max-width: 70rem;
+  }
 `;
 
 export const Form = styled.form`
@@ -15,12 +19,21 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+
+  @media screen and (min-width: 39em) {
+    padding: 2.6rem 3.2rem;
+  }
 `;
 
 export const HeaderBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+
+  @media screen and (min-width: 39em) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 export const Header = styled.h2`
@@ -78,6 +91,10 @@ export const TermLabelInputBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media screen and (min-width: 39em) {
+    flex: 50%;
+  }
 `;
 
 export const TermLabel = styled.label`
@@ -116,6 +133,10 @@ export const RateLabelInputBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media screen and (min-width: 39em) {
+    flex: 50%;
+  }
 `;
 
 export const RateLabel = styled.label`
@@ -152,6 +173,11 @@ export const TwoInputsFlex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+
+  @media screen and (min-width: 39em) {
+    flex-direction: row;
+    gap: 2rem;
+  }
 `;
 
 ////////////////// TYPE //////////////////////
@@ -234,6 +260,10 @@ export const EmptyResultsBox = styled.div`
   gap: 1rem;
   align-items: center;
   text-align: center;
+
+  @media screen and (min-width: 39em) {
+    padding: 3.2rem;
+  }
 `;
 
 export const ImgEmptyResults = styled.img`
@@ -259,6 +289,10 @@ export const ResultsSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media screen and (min-width: 39em) {
+    padding: 3.2rem;
+  }
 `;
 
 export const HeadingResults = styled.h2`
@@ -279,6 +313,10 @@ export const CalculatedBox = styled.div`
   gap: 2rem;
   border-radius: 0.8rem;
   border-top: 4px solid #d8db2f;
+
+  @media screen and (min-width: 39em) {
+    padding: 2.4rem;
+  }
 `;
 
 export const RepaymentCalcBox = styled.div`
