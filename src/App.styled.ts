@@ -83,6 +83,10 @@ export const AmountSpan = styled.span`
   padding: 0 1.2rem;
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
+
+  @media screen and (min-width: 39em) {
+    padding: 0 1.6rem;
+  }
 `;
 
 ///////////////// TERM INPUT /////////////////////
@@ -125,6 +129,10 @@ export const TermSpan = styled.span`
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
   border-top-right-radius: 0.1rem;
+
+  @media screen and (min-width: 39em) {
+    padding: 0 1.4rem;
+  }
 `;
 
 ///////////////// RATE INPUT /////////////////////
@@ -167,6 +175,10 @@ export const RateSpan = styled.span`
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
   border-top-right-radius: 0.1rem;
+
+  @media screen and (min-width: 39em) {
+    padding: 0 1.6rem;
+  }
 `;
 
 export const TwoInputsFlex = styled.div`
