@@ -47,6 +47,11 @@ export const ClearBtn = styled.button`
   line-height: 150%;
   align-self: flex-start;
   border-bottom: 1px solid #4e6e7e;
+  transition: all 0.2s;
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 ///////////////// AMOUNT INPUT /////////////////////
@@ -65,6 +70,10 @@ export const InputAmount = styled.input`
   padding: 0.8rem 0;
   padding-left: 4.4rem;
   font-size: 1.8rem;
+
+  @media screen and (min-width: 39em) {
+    padding-left: 5.2rem;
+  }
 `;
 
 export const InputBoxAmount = styled.div`
@@ -251,6 +260,11 @@ export const CalculateBtn = styled.button`
   width: 100%;
   border-radius: 99rem;
   padding: 1.6rem 0;
+  transition: all 0.2s;
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export const CalculateBtnText = styled.p`
