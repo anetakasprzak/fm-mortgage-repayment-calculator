@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 39em) {
     max-width: 70rem;
   }
+
+  @media screen and (min-width: 44.06em) {
+    padding: 2rem 0;
+  }
 `;
 
 export const Form = styled.form`
@@ -23,6 +27,11 @@ export const Form = styled.form`
   @media screen and (min-width: 39em) {
     padding: 2.6rem 3.2rem;
   }
+
+  @media screen and (min-width: 44.06em) {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
 `;
 
 export const HeaderBox = styled.div`
@@ -33,6 +42,10 @@ export const HeaderBox = styled.div`
   @media screen and (min-width: 39em) {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  @media screen and (min-width: 44.06em) {
+    margin-bottom: 1rem;
   }
 `;
 
@@ -290,6 +303,11 @@ export const EmptyResultsBox = styled.div`
   @media screen and (min-width: 39em) {
     padding: 3.2rem;
   }
+
+  @media screen and (min-width: 44.06em) {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
 `;
 
 export const ImgEmptyResults = styled.img`
@@ -318,6 +336,11 @@ export const ResultsSection = styled.div`
 
   @media screen and (min-width: 39em) {
     padding: 3.2rem;
+  }
+
+  @media screen and (min-width: 44.06em) {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 `;
 
