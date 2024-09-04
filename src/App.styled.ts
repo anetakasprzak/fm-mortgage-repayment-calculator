@@ -65,6 +65,18 @@ export const ClearBtn = styled.button`
   &:active {
     transform: scale(0.9);
   }
+
+  @media screen and (min-width: 44.06em) {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
 `;
 
 ///////////////// AMOUNT INPUT /////////////////////
@@ -239,6 +251,7 @@ export const RepaymentInputBox = styled.div`
 
 export const InputRepayment = styled.input`
   accent-color: #4e6e7e;
+  cursor: pointer;
 `;
 
 export const RepaymentText = styled.span``;
@@ -258,6 +271,7 @@ export const InterestInputBox = styled.div`
 
 export const InputInterest = styled.input`
   accent-color: #4e6e7e;
+  cursor: pointer;
 `;
 
 export const InterestText = styled.span``;
@@ -277,6 +291,19 @@ export const CalculateBtn = styled.button`
 
   &:active {
     transform: scale(0.9);
+  }
+
+  @media screen and (min-width: 44.06em) {
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 `;
 
