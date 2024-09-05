@@ -13,6 +13,12 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 44.06em) {
     padding: 2rem 0;
   }
+
+  @media screen and (min-width: 80em) {
+    flex-direction: row;
+    max-width: 100rem;
+    height: auto;
+  }
 `;
 
 export const Form = styled.form`
@@ -31,6 +37,13 @@ export const Form = styled.form`
   @media screen and (min-width: 44.06em) {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+  }
+
+  @media screen and (min-width: 80em) {
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 3.2rem 3.6rem;
+    gap: 2.4rem;
   }
 `;
 
@@ -232,6 +245,10 @@ export const InputsRadioBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+
+  @media screen and (min-width: 80em) {
+    gap: 2rem;
+  }
 `;
 
 export const LabelMortgageType = styled.label``;
@@ -299,11 +316,17 @@ export const CalculateBtn = styled.button`
     &:hover {
       transform: scale(1.04);
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      opacity: 0.85;
     }
 
     &:active {
       transform: scale(0.95);
     }
+  }
+
+  @media screen and (min-width: 80em) {
+    align-self: flex-start;
+    width: 75%;
   }
 `;
 
@@ -334,6 +357,14 @@ export const EmptyResultsBox = styled.div`
   @media screen and (min-width: 44.06em) {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+  }
+
+  @media screen and (min-width: 80em) {
+    border-bottom-left-radius: 0rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 3.2rem 3.2rem;
+    justify-content: center;
   }
 `;
 
@@ -369,6 +400,14 @@ export const ResultsSection = styled.div`
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
+
+  @media screen and (min-width: 80em) {
+    border-bottom-left-radius: 0rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 3.2rem 3.6rem;
+    justify-content: flex-start;
+  }
 `;
 
 export const HeadingResults = styled.h2`
@@ -393,6 +432,11 @@ export const CalculatedBox = styled.div`
   @media screen and (min-width: 39em) {
     padding: 2.4rem;
   }
+
+  @media screen and (min-width: 80em) {
+    padding: 2.8rem 3rem;
+    gap: 2.4rem;
+  }
 `;
 
 export const RepaymentCalcBox = styled.div`
@@ -409,6 +453,10 @@ export const RepaymentNumber = styled.span`
   color: #d8db2f;
   font-size: 4rem;
   font-weight: 700;
+
+  @media screen and (min-width: 80em) {
+    font-size: 5.6rem;
+  }
 `;
 
 export const TermCalcBox = styled.div``;
