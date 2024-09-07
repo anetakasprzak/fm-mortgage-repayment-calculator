@@ -370,6 +370,8 @@ export const CalculateBtn = styled.button`
   }
 `;
 
+export const BtnIcon = styled.img``;
+
 export const CalculateBtnText = styled.p`
   font-weight: 700;
   color: #133041;

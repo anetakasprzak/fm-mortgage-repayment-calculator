@@ -47,6 +47,7 @@ import {
   TwoInputsFlex,
   TermNumber,
   InputError,
+  BtnIcon,
 } from "./App.styled";
 
 import { useForm } from "react-hook-form";
@@ -105,17 +106,12 @@ function FormComponent({ setFormData }: FormComponentProps) {
   const repayment = monthlyPayment(amount, term, rate);
   const interestOnly = repayment * term - amount;
 
-  console.log(repayment);
-  console.log(interestOnly);
-
   const onSubmit = (data: FormValues) => {
     if (!data.type) {
       setError("type", { message: "Select one option" });
     }
     setFormData(data);
   };
-
-  console.log(errors);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -189,7 +185,7 @@ function FormComponent({ setFormData }: FormComponentProps) {
       </InputsRadioBox>
 
       <CalculateBtn>
-        <img src="/icon-calculator.svg" />
+        <BtnIcon src="/icon-calculator.svg" />
         <CalculateBtnText>Calculate Repayments</CalculateBtnText>
       </CalculateBtn>
     </Form>
