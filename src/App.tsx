@@ -88,6 +88,24 @@ function FormComponent({ setFormData }: FormComponentProps) {
     mode: "onChange",
   });
 
+  const amount = 300000; // initial amount borrowed
+  const rate = 5.25 / 100 / 12; //monthly interest rate
+  const term = 25 * 12; //number of payments months
+
+  function monthlyPayment(amount: number, term: number, rate: number) {
+    return (
+      (amount * rate * Math.pow(1 + rate, term)) /
+      (Math.pow(1 + rate, term) - 1)
+    );
+  }
+
+  //monthly mortgage payment
+  const repayment = monthlyPayment(amount, term, rate);
+  const interestOnly = repayment * term - amount;
+
+  console.log(repayment);
+  console.log(interestOnly);
+
   const onSubmit = (data: FormValues) => {
     setFormData(data);
   };
@@ -103,7 +121,9 @@ function FormComponent({ setFormData }: FormComponentProps) {
         <AmountLabel>Mortgage Amount</AmountLabel>
         <InputBoxAmount>
           <InputAmount
-            type="text"
+            type="number"
+            inputMode="numeric"
+            pattern="[0-9]+"
             {...register("amount", { required: true })}
           />
           <AmountSpan>£</AmountSpan>
@@ -114,7 +134,12 @@ function FormComponent({ setFormData }: FormComponentProps) {
         <TermLabelInputBox>
           <TermLabel>Mortgage Term</TermLabel>
           <InputBoxTerm>
-            <InputTerm type="text" {...register("term", { required: true })} />
+            <InputTerm
+              type="number"
+              inputMode="numeric"
+              pattern="[0-9]+"
+              {...register("term", { required: true })}
+            />
             <TermSpan>years</TermSpan>
           </InputBoxTerm>
         </TermLabelInputBox>
@@ -122,7 +147,12 @@ function FormComponent({ setFormData }: FormComponentProps) {
         <RateLabelInputBox>
           <RateLabel>Interest Rate</RateLabel>
           <InputBoxRate>
-            <InputRate type="text" {...register("rate", { required: true })} />
+            <InputRate
+              type="number"
+              inputMode="numeric"
+              pattern="[0-9]+"
+              {...register("rate", { required: true })}
+            />
             <RateSpan>%</RateSpan>
           </InputBoxRate>
         </RateLabelInputBox>
