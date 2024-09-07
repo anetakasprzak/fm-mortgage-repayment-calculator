@@ -1,3 +1,4 @@
+import { RefObject } from "react";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -103,11 +104,20 @@ export const AmountLabel = styled.label`
   font-weight: 500;
 `;
 
-export const InputAmount = styled.input`
+export const InputAmount = styled.input<{ error: boolean }>`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 4.4rem;
   font-size: 1.8rem;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+
+  border: ${(props) => (props.error ? "1.4px solid red" : "1.4px solid grey")};
+
+  &:focus {
+    border: 1.4px solid #000;
+  }
 
   @media screen and (min-width: 39em) {
     padding-left: 5.2rem;
@@ -118,15 +128,18 @@ export const InputBoxAmount = styled.div`
   position: relative;
 `;
 
-export const AmountSpan = styled.span`
+export const AmountSpan = styled.span<{ error: boolean }>`
   position: absolute;
   left: 1px;
   top: 1px;
   display: flex;
   align-items: center;
 
-  background-color: #e4f4fd;
-  height: 95%;
+  background-color: ${(props) => (props.error ? "#d73328" : "#e4f4fd")};
+  color: ${(props) => (props.error ? "#fff" : "#4e6e7e")};
+
+  height: 3.7rem;
+
   padding: 0 1.2rem;
   border-bottom-left-radius: 0.1rem;
   border-top-left-radius: 0.1rem;
@@ -152,26 +165,36 @@ export const TermLabel = styled.label`
   font-weight: 500;
 `;
 
-export const InputTerm = styled.input`
+export const InputTerm = styled.input<{ error: boolean }>`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 1rem;
   font-size: 1.8rem;
+  cursor: pointer;
+
+  outline: none;
+  border-radius: 0.2rem;
+  border: ${(props) => (props.error ? "1.4px solid red" : "1.4px solid grey")};
+  &:focus {
+    border: 1.4px solid #000;
+  }
 `;
 
 export const InputBoxTerm = styled.div`
   position: relative;
 `;
 
-export const TermSpan = styled.span`
+export const TermSpan = styled.span<{ error: boolean }>`
   position: absolute;
   right: 1px;
   top: 1px;
   display: flex;
   align-items: center;
 
-  background-color: #e4f4fd;
-  height: 95%;
+  background-color: ${(props) => (props.error ? "#d73328" : "#e4f4fd")};
+  color: ${(props) => (props.error ? "#fff" : "#4e6e7e")};
+
+  height: 3.7rem;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
@@ -198,26 +221,37 @@ export const RateLabel = styled.label`
   font-weight: 500;
 `;
 
-export const InputRate = styled.input`
+export const InputRate = styled.input<{ error: boolean }>`
   width: 100%;
   padding: 0.8rem 0;
   padding-left: 1rem;
   font-size: 1.8rem;
+  cursor: pointer;
+
+  outline: none;
+  border-radius: 0.2rem;
+  border: ${(props) => (props.error ? "1.4px solid red" : "1.4px solid grey")};
+
+  &:focus {
+    border: 1.4px solid #000;
+  }
 `;
 
 export const InputBoxRate = styled.div`
   position: relative;
 `;
 
-export const RateSpan = styled.span`
+export const RateSpan = styled.span<{ error: boolean }>`
   position: absolute;
   right: 1px;
   top: 1px;
   display: flex;
   align-items: center;
 
-  background-color: #e4f4fd;
-  height: 95%;
+  background-color: ${(props) => (props.error ? "#d73328" : "#e4f4fd")};
+  color: ${(props) => (props.error ? "#fff" : "#4e6e7e")};
+
+  height: 3.7rem;
 
   padding: 0 1.2rem;
   border-bottom-right-radius: 0.1rem;
@@ -292,6 +326,13 @@ export const InputInterest = styled.input`
 `;
 
 export const InterestText = styled.span``;
+
+////////////// INPUT ERROR //////////////////
+
+export const InputError = styled.span`
+  color: #d73328;
+  font-size: 1.4rem;
+`;
 
 ////////////////// CALCULATE BTN //////////////////////
 

@@ -46,6 +46,7 @@ import {
   TermCalcText,
   TwoInputsFlex,
   TermNumber,
+  InputError,
 } from "./App.styled";
 
 import { useForm } from "react-hook-form";
@@ -56,8 +57,8 @@ function App() {
   return (
     <Wrapper>
       <FormComponent setFormData={setFormData} />
-      {/* <EmptyResultsComponent /> */}
-      <CalculatedResults />
+      <EmptyResultsComponent />
+      {/* <CalculatedResults /> */}
     </Wrapper>
   );
 }
@@ -77,6 +78,7 @@ function FormComponent({ setFormData }: FormComponentProps) {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -107,8 +109,13 @@ function FormComponent({ setFormData }: FormComponentProps) {
   console.log(interestOnly);
 
   const onSubmit = (data: FormValues) => {
+    if (!data.type) {
+      setError("type", { message: "Select one option" });
+    }
     setFormData(data);
   };
+
+  console.log(errors);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -125,8 +132,10 @@ function FormComponent({ setFormData }: FormComponentProps) {
             inputMode="numeric"
             pattern="[0-9]+"
             {...register("amount", { required: true })}
+            error={Boolean(errors.amount)}
           />
-          <AmountSpan>£</AmountSpan>
+          {errors.amount && <InputError>This field is required</InputError>}
+          <AmountSpan error={Boolean(errors.amount)}>£</AmountSpan>
         </InputBoxAmount>
       </AmountLabelInputBox>
 
@@ -139,8 +148,10 @@ function FormComponent({ setFormData }: FormComponentProps) {
               inputMode="numeric"
               pattern="[0-9]+"
               {...register("term", { required: true })}
+              error={Boolean(errors.amount)}
             />
-            <TermSpan>years</TermSpan>
+            {errors.term && <InputError>This field is required</InputError>}
+            <TermSpan error={Boolean(errors.amount)}>years</TermSpan>
           </InputBoxTerm>
         </TermLabelInputBox>
 
@@ -152,8 +163,10 @@ function FormComponent({ setFormData }: FormComponentProps) {
               inputMode="numeric"
               pattern="[0-9]+"
               {...register("rate", { required: true })}
+              error={Boolean(errors.amount)}
             />
-            <RateSpan>%</RateSpan>
+            {errors.rate && <InputError>This field is required</InputError>}
+            <RateSpan error={Boolean(errors.amount)}>%</RateSpan>
           </InputBoxRate>
         </RateLabelInputBox>
       </TwoInputsFlex>
@@ -171,7 +184,8 @@ function FormComponent({ setFormData }: FormComponentProps) {
         <InterestInputBox>
           <InputInterest type="radio" value="interest" {...register("type")} />
           <InterestText>Interest Only</InterestText>
-        </InterestInputBox>
+        </InterestInputBox>{" "}
+        {errors.type && <InputError>{errors.type.message}</InputError>}
       </InputsRadioBox>
 
       <CalculateBtn>
