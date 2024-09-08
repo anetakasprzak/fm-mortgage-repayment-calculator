@@ -215,7 +215,7 @@ function CalculatedResults({ formData }: CalculatedResultsProps) {
 
   if (type === "repayment") {
     monthly = calcRepaymentMonthly(amountNr, termNr, rateNr);
-    total = monthly * 12 * termNr;
+    total = monthly * termNr;
   }
 
   if (type === "interest") {
@@ -235,11 +235,23 @@ function CalculatedResults({ formData }: CalculatedResultsProps) {
       <CalculatedBox>
         <RepaymentCalcBox>
           <RepaymentCalcText>Your monthly payments</RepaymentCalcText>
-          <RepaymentNumber>£{monthly?.toFixed(2)}</RepaymentNumber>
+          <RepaymentNumber>
+            {monthly &&
+              new Intl.NumberFormat("en-GB", {
+                style: "currency",
+                currency: "GBP",
+              }).format(monthly)}
+          </RepaymentNumber>
         </RepaymentCalcBox>
         <TermCalcBox>
           <TermCalcText>Total you'll repay over the term</TermCalcText>
-          <TermNumber>£{total?.toFixed(2)}</TermNumber>
+          <TermNumber>
+            {total &&
+              new Intl.NumberFormat("en-GB", {
+                style: "currency",
+                currency: "GBP",
+              }).format(total)}
+          </TermNumber>
         </TermCalcBox>
       </CalculatedBox>
     </ResultsSection>
