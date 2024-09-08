@@ -53,13 +53,13 @@ import {
 import { useForm } from "react-hook-form";
 
 function App() {
-  const [formData, setFormData] = useState<FormValues>();
+  const [formData, setFormData] = useState<FormValues | null>(null);
 
   return (
     <Wrapper>
       <FormComponent setFormData={setFormData} />
-      <EmptyResultsComponent />
-      {/* <CalculatedResults /> */}
+      {!formData && <EmptyResultsComponent />}
+      {formData && <CalculatedResults formData={formData} />}
     </Wrapper>
   );
 }
@@ -72,7 +72,7 @@ interface FormValues {
 }
 
 interface FormComponentProps {
-  setFormData: React.Dispatch<React.SetStateAction<FormValues | undefined>>;
+  setFormData: React.Dispatch<React.SetStateAction<FormValues | null>>;
 }
 
 function FormComponent({ setFormData }: FormComponentProps) {
@@ -90,21 +90,6 @@ function FormComponent({ setFormData }: FormComponentProps) {
     },
     mode: "onChange",
   });
-
-  const amount = 300000; // initial amount borrowed
-  const rate = 5.25 / 100 / 12; //monthly interest rate
-  const term = 25 * 12; //number of payments months
-
-  function monthlyPayment(amount: number, term: number, rate: number) {
-    return (
-      (amount * rate * Math.pow(1 + rate, term)) /
-      (Math.pow(1 + rate, term) - 1)
-    );
-  }
-
-  //monthly mortgage payment
-  const repayment = monthlyPayment(amount, term, rate);
-  const interestOnly = repayment * term - amount;
 
   const onSubmit = (data: FormValues) => {
     if (!data.type) {
@@ -156,6 +141,7 @@ function FormComponent({ setFormData }: FormComponentProps) {
           <InputBoxRate>
             <InputRate
               type="number"
+              step="0.01"
               inputMode="numeric"
               pattern="[0-9]+"
               {...register("rate", { required: true })}
@@ -205,23 +191,55 @@ function EmptyResultsComponent() {
   );
 }
 
-function CalculatedResults() {
+interface CalculatedResultsProps {
+  formData: FormValues;
+}
+
+function CalculatedResults({ formData }: CalculatedResultsProps) {
+  const { amount, term, rate, type } = formData || {};
+
+  const amountNr = parseInt(amount);
+  const rateNr = parseFloat(rate) / 100 / 12;
+  const termNr = parseInt(term) * 12;
+
+  function calcRepaymentMonthly(a: number, t: number, r: number) {
+    return (a * r * Math.pow(1 + r, t)) / (Math.pow(1 + r, t) - 1);
+  }
+
+  function calcInterestMonthly(p: number, i: number) {
+    return p * i;
+  }
+
+  let monthly;
+  let total;
+
+  if (type === "repayment") {
+    monthly = calcRepaymentMonthly(amountNr, termNr, rateNr);
+    total = monthly * 12 * termNr;
+  }
+
+  if (type === "interest") {
+    monthly = calcInterestMonthly(amountNr, rateNr);
+    total = monthly * termNr;
+  }
+
   return (
     <ResultsSection>
       <HeadingResults>Your results</HeadingResults>
       <ResultsText>
         Your results are shown below based on the information you provided. To
-        adjust the results, edit the form and click “calculate repayments”
-        again.
+        adjust the results, edit the form and click "
+        {type === "repayment" ? "calculate repayments " : "calculate interest "}
+        " again.
       </ResultsText>
       <CalculatedBox>
         <RepaymentCalcBox>
-          <RepaymentCalcText>Your monthly repayments</RepaymentCalcText>
-          <RepaymentNumber>£1,797.74</RepaymentNumber>
+          <RepaymentCalcText>Your monthly payments</RepaymentCalcText>
+          <RepaymentNumber>£{monthly?.toFixed(2)}</RepaymentNumber>
         </RepaymentCalcBox>
         <TermCalcBox>
           <TermCalcText>Total you'll repay over the term</TermCalcText>
-          <TermNumber>£539,322.94</TermNumber>
+          <TermNumber>£{total?.toFixed(2)}</TermNumber>
         </TermCalcBox>
       </CalculatedBox>
     </ResultsSection>
