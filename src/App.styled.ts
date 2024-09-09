@@ -284,14 +284,15 @@ export const InputsRadioBox = styled.div`
   }
 `;
 
-export const LabelMortgageType = styled.label``;
+export const MortgageType = styled.p``;
 
-export const RepaymentInputBox = styled.div`
+export const RepaymentInputBox = styled.label`
   display: flex;
   gap: 1rem;
   border: 1px solid #4e6e7e;
   border-radius: 0.2rem;
   padding: 1rem;
+  cursor: pointer;
 
   &:has(input:checked) {
     border: 1px solid #d8db2f;
@@ -306,12 +307,13 @@ export const InputRepayment = styled.input`
 
 export const RepaymentText = styled.span``;
 
-export const InterestInputBox = styled.div`
+export const InterestInputBox = styled.label`
   display: flex;
   gap: 1rem;
   border: 1px solid #4e6e7e;
   border-radius: 0.2rem;
   padding: 1rem;
+  cursor: pointer;
 
   &:has(input:checked) {
     border: 1px solid #d8db2f;

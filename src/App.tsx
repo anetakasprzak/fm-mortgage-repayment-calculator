@@ -25,7 +25,7 @@ import {
   InputRate,
   RateSpan,
   InputsRadioBox,
-  LabelMortgageType,
+  MortgageType,
   RepaymentInputBox,
   InputRepayment,
   RepaymentText,
@@ -80,6 +80,8 @@ function FormComponent({ setFormData }: FormComponentProps) {
     register,
     handleSubmit,
     setError,
+    reset,
+    clearErrors,
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
@@ -98,17 +100,26 @@ function FormComponent({ setFormData }: FormComponentProps) {
     setFormData(data);
   };
 
+  const handleReset = () => {
+    reset();
+    clearErrors();
+    setFormData(null);
+  };
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <HeaderBox>
         <Header>Mortgage Calculator</Header>
-        <ClearBtn>Clear All</ClearBtn>
+        <ClearBtn type="button" onClick={handleReset}>
+          Clear All
+        </ClearBtn>
       </HeaderBox>
 
       <AmountLabelInputBox>
-        <AmountLabel>Mortgage Amount</AmountLabel>
+        <AmountLabel htmlFor="amount">Mortgage Amount</AmountLabel>
         <InputBoxAmount>
           <InputAmount
+            id="amount"
             type="number"
             inputMode="numeric"
             pattern="[0-9]+"
@@ -122,9 +133,10 @@ function FormComponent({ setFormData }: FormComponentProps) {
 
       <TwoInputsFlex>
         <TermLabelInputBox>
-          <TermLabel>Mortgage Term</TermLabel>
+          <TermLabel htmlFor="term">Mortgage Term</TermLabel>
           <InputBoxTerm>
             <InputTerm
+              id="term"
               type="number"
               inputMode="numeric"
               pattern="[0-9]+"
@@ -137,9 +149,10 @@ function FormComponent({ setFormData }: FormComponentProps) {
         </TermLabelInputBox>
 
         <RateLabelInputBox>
-          <RateLabel>Interest Rate</RateLabel>
+          <RateLabel htmlFor="rate">Interest Rate</RateLabel>
           <InputBoxRate>
             <InputRate
+              id="rate"
               type="number"
               step="0.01"
               inputMode="numeric"
@@ -154,17 +167,23 @@ function FormComponent({ setFormData }: FormComponentProps) {
       </TwoInputsFlex>
 
       <InputsRadioBox>
-        <LabelMortgageType>Mortgage Type</LabelMortgageType>
-        <RepaymentInputBox>
+        <MortgageType>Mortgage Type</MortgageType>
+        <RepaymentInputBox htmlFor="repayment">
           <InputRepayment
+            id="repayment"
             type="radio"
             value="repayment"
             {...register("type")}
           />
           <RepaymentText>Repayment</RepaymentText>
         </RepaymentInputBox>
-        <InterestInputBox>
-          <InputInterest type="radio" value="interest" {...register("type")} />
+        <InterestInputBox htmlFor="interest">
+          <InputInterest
+            id="interest"
+            type="radio"
+            value="interest"
+            {...register("type")}
+          />
           <InterestText>Interest Only</InterestText>
         </InterestInputBox>{" "}
         {errors.type && <InputError>{errors.type.message}</InputError>}
