@@ -200,7 +200,7 @@ function FormComponent({ setFormData }: FormComponentProps) {
 function EmptyResultsComponent() {
   return (
     <EmptyResultsBox>
-      <ImgEmptyResults src="../public/illustration-empty.svg" />
+      <ImgEmptyResults src="/illustration-empty.svg" />
       <HeadingEmptyResults>Results shown here</HeadingEmptyResults>
       <TextEmptyResults>
         Complete the form and click “calculate repayments” to see what your
